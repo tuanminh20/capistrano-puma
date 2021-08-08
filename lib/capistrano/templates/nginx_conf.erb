@@ -61,6 +61,7 @@ server {
 <% else -%>
   <% if fetch(:nginx_downstream_uses_ssl) -%>
     proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header X-Forwarded-Ssl on;
   <% else -%>
     proxy_set_header X-Forwarded-Proto http;
   <% end -%>
